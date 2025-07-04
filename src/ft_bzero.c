@@ -1,22 +1,22 @@
 #include <assert.h>
+#include <bsd/string.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
-#include <bsd/string.h>
 
-void    *ft_bzero(void *s, size_t n)
+void	*ft_bzero(void *s, size_t n)
 {
-    unsigned char *ptr;
-    size_t i;
+	unsigned char	*ptr;
+	size_t			i;
 
-    ptr = s;
-    i = 0;
-    while (i < n)
-    {
-        ptr[i] = 0;
-        i++;
-    }
-    return s;
+	ptr = s;
+	i = 0;
+	while (i < n)
+	{
+		ptr[i] = 0;
+		i++;
+	}
+	return (s);
 }
 
 // int main(int argc, char **argv)
@@ -40,5 +40,5 @@ void    *ft_bzero(void *s, size_t n)
 //         printf("%c", str[i]);
 //     }
 
-//     return 0;
+//     return (0);
 // }

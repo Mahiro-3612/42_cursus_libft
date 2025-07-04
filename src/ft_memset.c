@@ -1,23 +1,24 @@
 #include <assert.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
+
 //  The  memset()  function  fills  the  first  n bytes of the memory area pointed to by s with the constant byte c.
 // s[.n] is a GNU extension that allows you to specify the size of the array s. s has at leat n bytes.
 
-void    *ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
-    unsigned char *ptr;
-    size_t i;
+	unsigned char	*ptr;
+	size_t			i;
 
-    ptr = s;
-    i = 0;
-    while (i < n)
-    {
-        ptr[i] = (unsigned char)c;
-        i++;
-    }
-    return s;
+	ptr = s;
+	i = 0;
+	while (i < n)
+	{
+		ptr[i] = (unsigned char)c;
+		i++;
+	}
+	return (s);
 }
 
 // int main(int argc, char **argv)
@@ -37,5 +38,5 @@ void    *ft_memset(void *s, int c, size_t n)
 
 //     printf("After memset: %s\n", str);
 
-//     return 0;
+//     return (0);
 // }

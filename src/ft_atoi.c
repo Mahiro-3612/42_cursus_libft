@@ -1,39 +1,40 @@
 #include <assert.h>
-#include <stdio.h>
-#include <string.h>
 #include <ctype.h>
 #include <limits.h>
+#include <stdio.h>
+#include <string.h>
 
-int atoi(const char *str)
+int	atoi(const char *str)
 {
-    int sign;
-    unsigned int num;
-    int result;
+	int sign;
+	unsigned int num;
+	int result;
 
-    sign = 1;
-    while (*str == ' ' || *str == '\f' || *str == '\n' || *str == '\r' || *str == '\t' || *str == '\v')
-    {
-        str++;
-    }
-    while (*str == '+' || *str == '-')
-    {
-        if (*str == '-')
-        {
-            sign = -sign;
-        }
-        str++;
-    }
-    num = 0;
-    while (*str && *str >= '0' && *str <= '9')
-    {
-        num *= 10;
-        num += *str - '0';
-        str++;
-    }
-    if (num == -INT_MIN && sign == -1)
-    {
-        return INT_MIN;
-    }
-    result = num * sign;
-    return result;
+	sign = 1;
+	while (*str == ' ' || *str == '\f' || *str == '\n' || *str == '\r'
+		|| *str == '\t' || *str == '\v')
+	{
+		str++;
+	}
+	while (*str == '+' || *str == '-')
+	{
+		if (*str == '-')
+		{
+			sign = -sign;
+		}
+		str++;
+	}
+	num = 0;
+	while (*str && *str >= '0' && *str <= '9')
+	{
+		num *= 10;
+		num += *str - '0';
+		str++;
+	}
+	if (num == -INT_MIN && sign == -1)
+	{
+		return (INT_MIN);
+	}
+	result = num * sign;
+	return (result);
 }

@@ -1,26 +1,25 @@
 #include <assert.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 
-size_t ft_strlcpy(char *dest, const char *src, size_t size)
-{ 
-    size_t i;
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+{
+	size_t	i;
 
-    i = 0;
-    while (i < size - 1 && src[i] != '\0')
-    {
-        dest[i] = src[i];
-        i++;
-    }
-    dest[i] = '\0';
-    i = 0;
-    while (src[i] != '\0')
-    {
-        i++;
-    }
-
-   return i;
+	i = 0;
+	while (i < size - 1 && src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	i = 0;
+	while (src[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
 
 // int main(void)
@@ -39,5 +38,5 @@ size_t ft_strlcpy(char *dest, const char *src, size_t size)
 //     printf("Copied string: '%s'\n", dest);
 //     printf("Number of characters copied: %zu\n", copied);
 
-//     return 0;
+//     return (0);
 // }
