@@ -33,7 +33,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 //     if (argc != 3)
 //     {
 //         printf("Usage: %s <source string> <number of bytes to move>\n",
-	argv[0]);
+// argv[0]);
 //         return (1);
 //     }
 
