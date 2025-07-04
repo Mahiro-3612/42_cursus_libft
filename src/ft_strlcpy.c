@@ -1,4 +1,4 @@
-# include "../include/libft.h"
+# include "../includes/libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {

@@ -1,4 +1,4 @@
-# include "../include/libft.h"
+# include "../includes/libft.h"
 
 int	atoi(const char *str)
 {
