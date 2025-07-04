@@ -23,21 +23,21 @@ size_t ft_strlcpy(char *dest, const char *src, size_t size)
    return i;
 }
 
-int main(void)
-{
-    char dest[10];
-    const char *src = "Hello, World!";
-    size_t copied;
+// int main(void)
+// {
+//     char dest[10];
+//     const char *src = "Hello, World!";
+//     size_t copied;
 
-    copied = ft_strlcpy(dest, src, sizeof(dest));
-    printf("Copied string: '%s'\n", dest);
-    printf("Number of characters copied: %zu\n", copied);
+//     copied = ft_strlcpy(dest, src, sizeof(dest));
+//     printf("Copied string: '%s'\n", dest);
+//     printf("Number of characters copied: %zu\n", copied);
 
-    // Test with a larger source string
-    const char *long_src = "This is a much longer string than the destination can hold.";
-    copied = ft_strlcpy(dest, long_src, sizeof(dest));
-    printf("Copied string: '%s'\n", dest);
-    printf("Number of characters copied: %zu\n", copied);
+//     // Test with a larger source string
+//     const char *long_src = "This is a much longer string than the destination can hold.";
+//     copied = ft_strlcpy(dest, long_src, sizeof(dest));
+//     printf("Copied string: '%s'\n", dest);
+//     printf("Number of characters copied: %zu\n", copied);
 
-    return 0;
-}
+//     return 0;
+// }

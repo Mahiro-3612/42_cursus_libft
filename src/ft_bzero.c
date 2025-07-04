@@ -19,26 +19,26 @@ void    *ft_bzero(void *s, size_t n)
     return s;
 }
 
-int main(int argc, char **argv)
-{
-    if (argc != 2)
-    {
-        printf("argc must be 2\n");
-        return (1);
-    }
+// int main(int argc, char **argv)
+// {
+//     if (argc != 2)
+//     {
+//         printf("argc must be 2\n");
+//         return (1);
+//     }
 
-    char str[100];
-    strcpy(str, argv[1]);
+//     char str[100];
+//     strcpy(str, argv[1]);
 
-    printf("Before bzero: %s\n", str);
+//     printf("Before bzero: %s\n", str);
 
-    ft_bzero(str, 5);
+//     ft_bzero(str, 5);
 
-    printf("After bzero: ");
-    for (size_t i = 0; i < strlen(argv[1]); i++)
-    {
-        printf("%c", str[i]);
-    }
+//     printf("After bzero: ");
+//     for (size_t i = 0; i < strlen(argv[1]); i++)
+//     {
+//         printf("%c", str[i]);
+//     }
 
-    return 0;
-}
+//     return 0;
+// }

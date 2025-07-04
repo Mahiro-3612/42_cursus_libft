@@ -19,22 +19,22 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
     }
     return dest;
 }
-int main(int argc, char **argv)
-{
-    if (argc != 3)
-    {
-        printf("Usage: %s <source> <destination>\n", argv[0]);
-        return 1;
-    }
+// int main(int argc, char **argv)
+// {
+//     if (argc != 3)
+//     {
+//         printf("Usage: %s <source> <destination>\n", argv[0]);
+//         return 1;
+//     }
 
-    char dest[100];
-    strcpy(dest, argv[1]);
+//     char dest[100];
+//     strcpy(dest, argv[1]);
 
-    printf("Before memcpy: %s\n", dest);
+//     printf("Before memcpy: %s\n", dest);
 
-    ft_memcpy(dest, argv[2], strlen(argv[2]) + 1);
+//     ft_memcpy(dest, argv[2], strlen(argv[2]) + 1);
 
-    printf("After memcpy: %s\n", dest);
+//     printf("After memcpy: %s\n", dest);
 
-    return 0;
-}
+//     return 0;
+// }

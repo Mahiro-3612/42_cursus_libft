@@ -20,22 +20,22 @@ void    *ft_memset(void *s, int c, size_t n)
     return s;
 }
 
-int main(int argc, char **argv)
-{
-    if (argc != 2)
-    {
-        printf("argc must be 2\n");
-        return (1);
-    }
+// int main(int argc, char **argv)
+// {
+//     if (argc != 2)
+//     {
+//         printf("argc must be 2\n");
+//         return (1);
+//     }
 
-    char str[100];
-    strcpy(str, argv[1]);
+//     char str[100];
+//     strcpy(str, argv[1]);
 
-    printf("Before memset: %s\n", str);
+//     printf("Before memset: %s\n", str);
 
-    ft_memset(str, 'x', 5);
+//     ft_memset(str, 'x', 5);
 
-    printf("After memset: %s\n", str);
+//     printf("After memset: %s\n", str);
 
-    return 0;
-}
+//     return 0;
+// }

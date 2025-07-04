@@ -33,23 +33,23 @@ void *ft_memmove(void *dest, const void *src, size_t n)
     return dest;
 }
 
-int main(int argc, char **argv)
-{
-    if (argc != 3)
-    {
-        printf("Usage: %s <source string> <number of bytes to move>\n", argv[0]);
-        return 1;
-    }
+// int main(int argc, char **argv)
+// {
+//     if (argc != 3)
+//     {
+//         printf("Usage: %s <source string> <number of bytes to move>\n", argv[0]);
+//         return 1;
+//     }
 
-    char dest[100];
-    const char *src = argv[1];
-    size_t n = (size_t)atoi(argv[2]);
+//     char dest[100];
+//     const char *src = argv[1];
+//     size_t n = (size_t)atoi(argv[2]);
 
-    printf("Before ft_memmove: %s\n", dest);
+//     printf("Before ft_memmove: %s\n", dest);
 
-    ft_memmove(dest, src, n);
+//     ft_memmove(dest, src, n);
 
-    printf("After ft_memmove: %s\n", dest);
+//     printf("After ft_memmove: %s\n", dest);
 
-    return 0;
-}
+//     return 0;
+// }
