@@ -1,7 +1,4 @@
-#include <assert.h>
-#include <ctype.h>
-#include <stdio.h>
-#include <string.h>
+# include "../include/libft.h"
 
 int	ft_isalpha(int c)
 {

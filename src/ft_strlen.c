@@ -1,6 +1,4 @@
-#include <assert.h>
-#include <stdio.h>
-#include <string.h>
+# include "../include/libft.h"
 
 size_t	ft_strlen(const char *s)
 {

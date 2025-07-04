@@ -1,7 +1,4 @@
-#include <assert.h>
-#include <ctype.h>
-#include <stdio.h>
-#include <string.h>
+# include "../include/libft.h"
 
 //  The  memset()  function  fills  the  first  n bytes of the memory area pointed to by s with the constant byte c.
 // s[.n] is a GNU extension that allows you to specify the size of the array s. s has at leat n bytes.

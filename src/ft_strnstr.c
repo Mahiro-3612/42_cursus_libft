@@ -1,7 +1,4 @@
-#include <assert.h>
-#include <ctype.h>
-#include <stdio.h>
-#include <string.h>
+# include "../include/libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

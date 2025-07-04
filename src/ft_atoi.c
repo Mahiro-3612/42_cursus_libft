@@ -1,8 +1,4 @@
-#include <assert.h>
-#include <ctype.h>
-#include <limits.h>
-#include <stdio.h>
-#include <string.h>
+# include "../include/libft.h"
 
 int	atoi(const char *str)
 {
