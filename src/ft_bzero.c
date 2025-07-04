@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <bsd/string.h>
 
 void    *ft_bzero(void *s, size_t n)
 {
