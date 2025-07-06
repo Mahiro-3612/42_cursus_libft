@@ -6,7 +6,7 @@
 /*   By: msakurai <msakurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 16:12:30 by msakurai          #+#    #+#             */
-/*   Updated: 2025/07/06 16:40:05 by msakurai         ###   ########.fr       */
+/*   Updated: 2025/07/06 19:03:22 by msakurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ int	ft_atoi(const char	*str)
 	{
 		str++;
 	}
-	while (*str == '+' || *str == '-')
+	if (*str == '+' || *str == '-')
 	{
 		if (*str == '-')
 		{
-			sign = -sign;
+			sign = -1;
 		}
 		str++;
 	}
