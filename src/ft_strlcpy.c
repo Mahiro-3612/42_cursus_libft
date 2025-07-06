@@ -5,18 +5,17 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	size_t	i;
 
 	i = 0;
+	if (size == 0)
+	{
+		return (ft_strlen(src));
+	}
 	while (i < size - 1 && src[i] != '\0')
 	{
 		dest[i] = src[i];
 		i++;
 	}
 	dest[i] = '\0';
-	i = 0;
-	while (src[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	return (ft_strlen(src));
 }
 
 // int main(void)
@@ -25,6 +24,10 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 //     const char *src = "Hello, World!";
 //     size_t copied;
 
+// 	//test when size is 0
+// 	copied = ft_strlcpy(dest, src, 0);
+// 	printf("Copied string: '%s'\n", dest);
+// 	printf("Number of characters copied: %zu\n", copied);
 //     copied = ft_strlcpy(dest, src, sizeof(dest));
 //     printf("Copied string: '%s'\n", dest);
 //     printf("Number of characters copied: %zu\n", copied);
