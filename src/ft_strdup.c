@@ -1,4 +1,4 @@
-# include "../includes/libft.h"
+# include "../libft.h"
 
 char *strdup(const char *s)
 {
