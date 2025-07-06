@@ -11,7 +11,7 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		if (*s == c_char)
 		{
-			last_c = s;
+			last_c = (char *)s;
 		}
 		s++;
 	}

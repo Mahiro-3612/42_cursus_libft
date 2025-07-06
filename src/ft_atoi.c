@@ -27,7 +27,7 @@ int	atoi(const char *str)
 		num += *str - '0';
 		str++;
 	}
-	if (num == -INT_MIN && sign == -1)
+	if ((int)num == -INT_MIN && sign == -1)
 	{
 		return (INT_MIN);
 	}

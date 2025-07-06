@@ -10,7 +10,7 @@ char	*ft_strchr(const char *s, int c)
 	{
 		if (*s == c_char)
 		{
-			return (s);
+			return (char *)(s);
 		}
 		s++;
 	}
