@@ -6,7 +6,7 @@
 /*   By: msakurai <msakurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 16:13:15 by msakurai          #+#    #+#             */
-/*   Updated: 2025/07/06 16:13:15 by msakurai         ###   ########.fr       */
+/*   Updated: 2025/07/06 16:33:45 by msakurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 //     printf("Number of characters copied: %zu\n", copied);
 
 //     // Test with a larger source string
-//     const char *long_src = "This is a much longer string than the destination can hold.";
+//     const char *long_src = "This is a much longer string"
+//  "than the destination can hold.";
 //     copied = ft_strlcpy(dest, long_src, sizeof(dest));
 //     printf("Copied string: '%s'\n", dest);
 //     printf("Number of characters copied: %zu\n", copied);

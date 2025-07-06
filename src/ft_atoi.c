@@ -6,17 +6,17 @@
 /*   By: msakurai <msakurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 16:12:30 by msakurai          #+#    #+#             */
-/*   Updated: 2025/07/06 16:12:30 by msakurai         ###   ########.fr       */
+/*   Updated: 2025/07/06 16:40:05 by msakurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	atoi(const char *str)
+int	ft_atoi(const char	*str)
 {
-	int sign;
-	unsigned int num;
-	int result;
+	int				sign;
+	unsigned int	num;
+	int				result;
 
 	sign = 1;
 	while (*str == ' ' || *str == '\f' || *str == '\n' || *str == '\r'
