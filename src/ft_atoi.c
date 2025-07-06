@@ -1,4 +1,4 @@
-# include "../libft.h"
+#include "../libft.h"
 
 int	atoi(const char *str)
 {
@@ -27,7 +27,7 @@ int	atoi(const char *str)
 		num += *str - '0';
 		str++;
 	}
-	if ((int)num == -INT_MIN && sign == -1)
+	if (num == (unsigned int)-INT_MIN && sign == -1)
 	{
 		return (INT_MIN);
 	}
