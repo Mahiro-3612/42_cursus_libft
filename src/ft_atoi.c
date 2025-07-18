@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msakurai <msakurai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 16:12:30 by msakurai          #+#    #+#             */
-/*   Updated: 2025/07/06 19:03:22 by msakurai         ###   ########.fr       */
+/*   Updated: 2025/07/18 11:39:37 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,11 @@ int	ft_atoi(const char	*str)
 	sign = 1;
 	while (*str == ' ' || *str == '\f' || *str == '\n' || *str == '\r'
 		|| *str == '\t' || *str == '\v')
-	{
 		str++;
-	}
 	if (*str == '+' || *str == '-')
 	{
 		if (*str == '-')
-		{
 			sign = -1;
-		}
 		str++;
 	}
 	num = 0;
@@ -40,9 +36,7 @@ int	ft_atoi(const char	*str)
 		str++;
 	}
 	if (num == (unsigned int)INT_MAX + 1 && sign == -1)
-	{
 		return (INT_MIN);
-	}
 	result = num * sign;
 	return (result);
 }
