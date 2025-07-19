@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/06 16:13:09 by msakurai          #+#    #+#             */
-/*   Updated: 2025/07/19 04:51:31 by codespace        ###   ########.fr       */
+/*   Created: 2025/07/19 04:39:08 by codespace         #+#    #+#             */
+/*   Updated: 2025/07/19 06:43:41 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-char	*ft_strdup(const char *s)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*copy;
+	char	*a;
 
-	copy = malloc(ft_strlen(s) + 1);
-	if (copy == NULL)
-	{
-		return (NULL);
-	}
-	ft_strlcpy(copy, s, ft_strlen(s) + 1);
-	return (copy);
+	a = ft_itoa(n);
+	write(fd, a, ft_strlen(a));
 }

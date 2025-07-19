@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/06 16:13:09 by msakurai          #+#    #+#             */
-/*   Updated: 2025/07/19 04:51:31 by codespace        ###   ########.fr       */
+/*   Created: 2025/07/19 04:41:11 by codespace         #+#    #+#             */
+/*   Updated: 2025/07/19 06:09:20 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*copy;
+	char	*dest;
+	size_t	set_count;
+	size_t	i;
 
-	copy = malloc(ft_strlen(s) + 1);
-	if (copy == NULL)
+	set_count = 0;
+	while (*set)
 	{
-		return (NULL);
+		if (ft_strchr(s1, (int)*set) != NULL)
+			set_count++;
+		set++;
 	}
-	ft_strlcpy(copy, s, ft_strlen(s) + 1);
-	return (copy);
+	dest = ft_calloc(ft_strlen - set_count + 1, sizeof(char));
+	while (*s1)
+	{
+		if (ft_strchr(s1, (int)*set) == NULL)
+			*dest = *s1;
+		dest++;
+		s1++;
+	}
 }
