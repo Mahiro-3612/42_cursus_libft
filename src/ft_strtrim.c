@@ -12,25 +12,42 @@
 
 #include "../libft.h"
 
+size_t	is_in_set(char const s, char const *set)
+{
+	size_t	flg;
+
+	flg = 0;
+	while (*set)
+	{
+		if (s == *set)
+			flg = 1;
+		set++;
+	}
+	return (flg);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*dest;
-	size_t	set_count;
+	int		i;
+	int		j;
 
-	set_count = 0;
-	while (*set)
+	i = 0;
+	while (is_in_set(s1[i], set) == 1 && s1[i])
+		i++;
+	j = ft_strlen(s1) - 1;
+	if (s1[i] != '\0')
 	{
-		if (ft_strchr(s1, (int)*set) != NULL)
-			set_count++;
-		set++;
+		while (is_in_set(s1[j], set) == 1)
+			j--;
 	}
-	dest = ft_calloc(ft_strlen(s1) - set_count + 1, sizeof(char));
-	while (*s1)
-	{
-		if (ft_strchr(s1, (int)*set) == NULL)
-			*dest = *s1;
-		dest++;
-		s1++;
-	}
+	dest = ft_substr(s1, i, j - i + 1);
 	return (dest);
 }
+
+// int	main(void)
+// {
+// 	printf("Trimmed string: '%s'\n", ft_strtrim("   Hello World!   ", " !"));
+// 	assert(strcmp(ft_strtrim("   Hello World!   ", " !"), "Hello World") == 0);
+// 	return (0);
+// }
