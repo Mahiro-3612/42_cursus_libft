@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 04:40:19 by codespace         #+#    #+#             */
-/*   Updated: 2025/07/19 07:43:03 by codespace        ###   ########.fr       */
+/*   Updated: 2025/07/19 08:25:55 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ char	**ft_split(char const *s, char c)
 	size_t	row_count;
 	size_t	column_count;
 	char	**dest;
-	char	*column;
 
 	row_count = count_row(s, c);
 	dest = ft_calloc(row_count + 1, sizeof(char *));
@@ -59,5 +58,5 @@ char	**ft_split(char const *s, char c)
 		s += column_count;
 	}
 	dest[row_count] = NULL;
-	return (dest)
+	return (dest);
 }

@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 04:41:11 by codespace         #+#    #+#             */
-/*   Updated: 2025/07/19 06:09:20 by codespace        ###   ########.fr       */
+/*   Updated: 2025/07/19 08:24:34 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*dest;
 	size_t	set_count;
-	size_t	i;
 
 	set_count = 0;
 	while (*set)
@@ -25,7 +24,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 			set_count++;
 		set++;
 	}
-	dest = ft_calloc(ft_strlen - set_count + 1, sizeof(char));
+	dest = ft_calloc(ft_strlen(s1) - set_count + 1, sizeof(char));
 	while (*s1)
 	{
 		if (ft_strchr(s1, (int)*set) == NULL)
@@ -33,4 +32,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 		dest++;
 		s1++;
 	}
+	return (dest);
 }
