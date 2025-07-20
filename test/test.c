@@ -6,14 +6,14 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 09:13:55 by codespace         #+#    #+#             */
-/*   Updated: 2025/07/20 09:50:36 by codespace        ###   ########.fr       */
+/*   Updated: 2025/07/20 09:59:13 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../libft.h"
-# include <stdio.h>
+#include "../libft.h"
+#include <stdio.h>
 
-int main(void)
+int	main(void)
 {
 	return (0);
 }
