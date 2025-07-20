@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/20 05:35:57 by codespace         #+#    #+#             */
-/*   Updated: 2025/07/20 06:30:13 by codespace        ###   ########.fr       */
+/*   Created: 2025/07/20 05:21:32 by codespace         #+#    #+#             */
+/*   Updated: 2025/07/20 08:31:54 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+#include "../libft.h"
+
+t_list	*ft_lstnew(void *content)
 {
-	if (!lst || !f)
-		return ;
-	while (*lst)
-	{
-		lst->content = f(lst->content);
-		lst = lst->next;
-	}
+	t_list	*new;
+
+	new = malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

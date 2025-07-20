@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/20 05:34:14 by codespace         #+#    #+#             */
-/*   Updated: 2025/07/20 06:17:57 by codespace        ###   ########.fr       */
+/*   Created: 2025/07/20 05:33:22 by codespace         #+#    #+#             */
+/*   Updated: 2025/07/20 08:31:32 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+t_list	*ft_lstlast(t_list *lst);
+
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!lst || !del)
-		return ;
-	del(lst->content);
-	free(lst);
+	t_list	*last;
+
+	if (!lst || !new)
+		return (NULL);
+	last = ft_lstlast(*lst);
+	last->next = new;
 }

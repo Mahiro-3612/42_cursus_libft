@@ -41,26 +41,20 @@ SRCS		:= src/ft_strlen.c \
                 src/ft_putendl_fd.c \
                 src/ft_putnbr_fd.c \
 
-BONUS       := bonus/ft_lstnew.c \
-                bonus/ft_lstadd_front.c \
-                bonus/ft_lstsize.c \
-                bonus/ft_lstlast.c \
-                bonus/ft_lstadd_back.c \
-                bonus/ft_lstdelone.c \
-                bonus/ft_lstclear.c \
-                bonus/ft_lstiter.c \
-                bonus/ft_lstmap.c
+BONUS       := bonus/ft_lstnew_bonus.c \
+                bonus/ft_lstadd_front_bonus.c \
+                bonus/ft_lstsize_bonus.c \
+                bonus/ft_lstlast_bonus.c \
+                bonus/ft_lstadd_back_bonus.c \
+                bonus/ft_lstdelone_bonus.c \
+                bonus/ft_lstclear_bonus.c \
+                bonus/ft_lstiter_bonus.c \
+                bonus/ft_lstmap_bonus.c
 
 OBJS		:= $(SRCS:.c=.o)
 OBJS_BONUS  := $(BONUS:.c=.o)
 
-ifeq ($(MAKECMDGOALS), bonus)
-	OBJS += $(OBJ_BONUS)
-endif
-
 all: $(NAME)
-
-bonus: all
 
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
@@ -75,5 +69,8 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+bonus:  $(OBJS) $(OBJS_BONUS)
+	$(AR) $(NAME) $(OBJS) $(OBJS_BONUS)
 
 .PHONY: all clean fclean re bonus
