@@ -6,13 +6,13 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 05:36:43 by codespace         #+#    #+#             */
-/*   Updated: 2025/07/20 06:48:44 by codespace        ###   ########.fr       */
+/*   Updated: 2025/07/20 06:53:24 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	**original;
 	size_t	size;
@@ -33,7 +33,7 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			ft_lstclear(&original, del);
 			return (NULL);
 		}
-		mapped_pre->next = mapped_new
+		mapped_pre->next = mapped_new;
 		lst++;
 	}
 	return (original);
