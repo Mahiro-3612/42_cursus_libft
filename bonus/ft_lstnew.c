@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 05:21:32 by codespace         #+#    #+#             */
-/*   Updated: 2025/07/20 05:23:19 by codespace        ###   ########.fr       */
+/*   Updated: 2025/07/20 06:07:13 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,12 @@
 
 t_list	*ft_lstnew(void *content)
 {
+	t_list	*new;
 
+	new = malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

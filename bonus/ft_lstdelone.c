@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 05:34:14 by codespace         #+#    #+#             */
-/*   Updated: 2025/07/20 05:34:48 by codespace        ###   ########.fr       */
+/*   Updated: 2025/07/20 06:17:57 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
 }
