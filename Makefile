@@ -41,10 +41,26 @@ SRCS		:= src/ft_strlen.c \
                 src/ft_putendl_fd.c \
                 src/ft_putnbr_fd.c \
 
-OBJS		:= $(SRCS:.c=.o)
+BONUS       := bonus/ft_lstnew.c \
+                bonus/ft_lstadd_front.c \
+                bonus/ft_lstsize.c \
+                bonus/ft_lstlast.c \
+                bonus/ft_lstadd_back.c \
+                bonus/ft_lstdelone.c \
+                bonus/ft_lstclear.c \
+                bonus/ft_lstiter.c \
+                bonus/ft_lstmap.c
 
+OBJS		:= $(SRCS:.c=.o)
+OBJS_BONUS  := $(BONUS:.c=.o)
+
+ifeq ($(MAKECMDGOALS), bonus)
+	OBJS += $(OBJ_BONUS)
+endif
 
 all: $(NAME)
+
+bonus: all
 
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
@@ -53,11 +69,11 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
