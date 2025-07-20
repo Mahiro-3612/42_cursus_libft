@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 05:35:10 by codespace         #+#    #+#             */
-/*   Updated: 2025/07/20 08:31:43 by codespace        ###   ########.fr       */
+/*   Updated: 2025/07/20 08:34:46 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		return ;
 	while (*lst)
 	{
-		*tmp = (*lst)->content;
-		ft_lstdelone(*tmp, del);
-		*lst = *tmp;
+		tmp = (*lst)->content;
+		ft_lstdelone(tmp, del);
+		*lst = tmp;
 	}
 }

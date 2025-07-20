@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 05:36:43 by codespace         #+#    #+#             */
-/*   Updated: 2025/07/20 08:31:52 by codespace        ###   ########.fr       */
+/*   Updated: 2025/07/20 08:38:56 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	**original;
-	size_t	size;
+	t_list	*original;
 	t_list	*mapped_pre;
 	t_list	*mapped_new;
 
