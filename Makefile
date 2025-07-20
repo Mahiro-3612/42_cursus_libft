@@ -28,7 +28,18 @@ SRCS		:= src/ft_strlen.c \
                 src/ft_toupper.c \
                 src/ft_tolower.c \
                 src/ft_calloc.c \
-                src/ft_strdup.c 
+                src/ft_strdup.c \
+                src/ft_substr.c \
+                src/ft_strjoin.c \
+                src/ft_strtrim.c \
+                src/ft_split.c \
+                src/ft_itoa.c \
+                src/ft_strmapi.c \
+                src/ft_striteri.c \
+                src/ft_putchar_fd.c \
+                src/ft_putstr_fd.c \
+                src/ft_putendl_fd.c \
+                src/ft_putnbr_fd.c \
 
 OBJS		:= $(SRCS:.c=.o)
 

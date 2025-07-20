@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/06 16:13:09 by msakurai          #+#    #+#             */
-/*   Updated: 2025/07/19 04:51:31 by codespace        ###   ########.fr       */
+/*   Created: 2025/07/19 04:40:26 by codespace         #+#    #+#             */
+/*   Updated: 2025/07/19 08:29:03 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-char	*ft_strdup(const char *s)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	char	*copy;
+	size_t	i;
 
-	copy = malloc(ft_strlen(s) + 1);
-	if (copy == NULL)
+	i = 0;
+	while (s[i])
 	{
-		return (NULL);
+		f(i, &s[i]);
+		i++;
 	}
-	ft_strlcpy(copy, s, ft_strlen(s) + 1);
-	return (copy);
 }

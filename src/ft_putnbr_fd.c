@@ -1,26 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/06 16:13:09 by msakurai          #+#    #+#             */
-/*   Updated: 2025/07/19 04:51:31 by codespace        ###   ########.fr       */
+/*   Created: 2025/07/19 04:39:08 by codespace         #+#    #+#             */
+/*   Updated: 2025/07/19 06:43:41 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-char	*ft_strdup(const char *s)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*copy;
+	long	num;
+	long	div;
+	char	c;
 
-	copy = malloc(ft_strlen(s) + 1);
-	if (copy == NULL)
+	num = (long)n;
+	if (num < 0)
 	{
-		return (NULL);
+		ft_putchar_fd('-', fd);
+		num *= -1;
 	}
-	ft_strlcpy(copy, s, ft_strlen(s) + 1);
-	return (copy);
+	div = 1;
+	while (num / div >= 10)
+		div *= 10;
+	while (div > 0)
+	{
+		c = '0' + (num / div);
+		ft_putchar_fd(c, fd);
+		num %= div;
+		div /= 10;
+	}
 }
+
+// int	main(void)
+// {
+// 	ft_putnbr_fd(12345, 1);
+// 	ft_putnbr_fd(-67890, 1);
+// 	ft_putnbr_fd(0, 1);
+// 	return (0);
+// }
