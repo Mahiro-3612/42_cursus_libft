@@ -53,11 +53,18 @@ BONUS       := bonus/ft_lstnew_bonus.c \
 
 OBJS		:= $(SRCS:.c=.o)
 OBJS_BONUS  := $(BONUS:.c=.o)
+BUILD_OBJS	:= $(OBJS)
+
+ifeq ($(MAKECMDGOALS), bonus)
+	BUILD_OBJS += $(OBJS_BONUS)
+endif
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(AR) $(NAME) $(OBJS)
+$(NAME): $(BUILD_OBJS)
+	$(AR) $@ $^
+
+bonus: $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -69,8 +76,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
-
-bonus:  $(OBJS) $(OBJS_BONUS)
-	$(AR) $(NAME) $(OBJS) $(OBJS_BONUS)
 
 .PHONY: all clean fclean re bonus
