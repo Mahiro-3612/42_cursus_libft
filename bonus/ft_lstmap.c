@@ -6,11 +6,15 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 05:36:43 by codespace         #+#    #+#             */
-/*   Updated: 2025/07/20 06:53:24 by codespace        ###   ########.fr       */
+/*   Updated: 2025/07/20 07:03:48 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
+
+t_list	*ft_lstnew(void *content);
+
+void	ft_lstclear(t_list **lst, void (*del)(void *));
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
