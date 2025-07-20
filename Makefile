@@ -6,6 +6,14 @@ RM			:= rm -f
 
 CFLAGS		:= -Wall -Wextra -Werror
 
+TEST_PROG        := test_program
+TEST_PROG_BONUS  := test_bonus_program
+
+TEST_SRCS        := test/test.c
+TEST_SRCS_BONUS  := test/test_bonus.c
+
+MAKE_OPTS   := --no-print-directory -s
+
 SRCS		:= src/ft_strlen.c \
                 src/ft_strlcpy.c \
                 src/ft_strlcat.c \
@@ -77,4 +85,22 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+test:
+	@$(MAKE) $(MAKE_OPTS) all
+	@echo "--- Compiling $(TEST_SRCS) and running tests ---"
+	@$(CC) $(CFLAGS) $(TEST_SRCS) -L. -lft -o $(TEST_PROG)
+	@./$(TEST_PROG)
+	@echo "\n--- Cleaning up test files ---"
+	@$(RM) $(TEST_PROG)
+	@$(MAKE) $(MAKE_OPTS) fclean
+
+test_bonus:
+	@$(MAKE) $(MAKE_OPTS) bonus
+	@echo "--- Compiling $(TEST_SRCS_BONUS) and running bonus tests ---"
+	@$(CC) $(CFLAGS) $(TEST_SRCS_BONUS) -L. -lft -o $(TEST_PROG_BONUS)
+	@./$(TEST_PROG_BONUS)
+	@echo "\n--- Cleaning up test files ---"
+	@$(RM) $(TEST_PROG_BONUS)
+	@$(MAKE) $(MAKE_OPTS) fclean
+
+.PHONY: all clean fclean re bonus test test_bonus
