@@ -6,13 +6,13 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 04:40:19 by codespace         #+#    #+#             */
-/*   Updated: 2025/07/19 08:25:55 by codespace        ###   ########.fr       */
+/*   Updated: 2025/07/21 10:02:08 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-size_t	count_row(char const *s, char c)
+static size_t	count_row(char const *s, char c)
 {
 	size_t	i;
 
@@ -31,7 +31,7 @@ size_t	count_row(char const *s, char c)
 	return (i);
 }
 
-size_t	count_column(char const *s, char c)
+static size_t	count_column(char const *s, char c)
 {
 	size_t	i;
 
@@ -41,7 +41,7 @@ size_t	count_column(char const *s, char c)
 	return (i);
 }
 
-void	*ft_free_split(char **split)
+static void	*ft_free_split(char **split)
 {
 	size_t	i;
 
@@ -57,7 +57,7 @@ void	*ft_free_split(char **split)
 	return (NULL);
 }
 
-char	**get_columns(char const *s, char c, size_t row_count, char **dest)
+static char	**get_columns(char const *s, char c, size_t row_count, char **dest)
 {
 	size_t	i;
 	size_t	j;
