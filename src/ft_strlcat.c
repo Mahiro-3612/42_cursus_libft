@@ -6,30 +6,40 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 16:13:12 by msakurai          #+#    #+#             */
-/*   Updated: 2025/07/18 16:55:36 by codespace        ###   ########.fr       */
+/*   Updated: 2025/07/21 09:43:13 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
+size_t	ft_strnlen(const char *s, size_t maxlen)
+{
+	size_t	len;
+
+	len = 0;
+	while (s[len] && len < maxlen)
+		len++;
+	return (len);
+}
+
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	size_t	dst_len;
+	size_t	dst_nlen;
 	size_t	src_len;
 
-	dst_len = ft_strlen(dst);
+	dst_nlen = ft_strnlen(dst, size);
 	src_len = ft_strlen(src);
-	if (dst_len >= size)
+	if (dst_nlen == size)
 		return (size + src_len);
 	i = 0;
-	while (dst_len + i < size - 1 && src[i])
+	while (dst_nlen + i + 1 < size && src[i])
 	{
-		dst[dst_len + i] = src[i];
+		dst[dst_nlen + i] = src[i];
 		i++;
 	}
-	dst[dst_len + i] = '\0';
-	return (dst_len + src_len);
+	dst[dst_nlen + i] = '\0';
+	return (dst_nlen + src_len);
 }
 
 // #include <bsd/string.h>

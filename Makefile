@@ -6,6 +6,8 @@ RM			:= rm -f
 
 CFLAGS		:= -Wall -Wextra -Werror
 
+INCDIR= -I./
+
 TEST_PROG        := test_program
 TEST_PROG_BONUS  := test_bonus_program
 
@@ -74,7 +76,7 @@ $(NAME): $(OBJS)
 bonus: $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCDIR) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS) $(OBJS_BONUS)
@@ -87,7 +89,7 @@ re: fclean all
 test:
 	@$(MAKE) $(MAKE_OPTS) all
 	@echo "--- Compiling $(TEST_SRCS) and running tests ---"
-	@$(CC) $(CFLAGS) $(TEST_SRCS) -L. -lft -o $(TEST_PROG)
+	@$(CC) $(CFLAGS) $(INCDIR) $(TEST_SRCS) -L. -lft -o $(TEST_PROG)
 	@./$(TEST_PROG)
 	@echo "\n--- Cleaning up test files ---"
 	@$(RM) $(TEST_PROG)
@@ -96,7 +98,7 @@ test:
 test_bonus:
 	@$(MAKE) $(MAKE_OPTS) bonus
 	@echo "--- Compiling $(TEST_SRCS_BONUS) and running bonus tests ---"
-	@$(CC) $(CFLAGS) $(TEST_SRCS_BONUS) -L. -lft -o $(TEST_PROG_BONUS)
+	@$(CC) $(CFLAGS) $(INCDIR) $(TEST_SRCS_BONUS) -L. -lft -o $(TEST_PROG_BONUS)
 	@./$(TEST_PROG_BONUS)
 	@echo "\n--- Cleaning up test files ---"
 	@$(RM) $(TEST_PROG_BONUS)
