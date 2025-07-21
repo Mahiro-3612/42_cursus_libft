@@ -61,16 +61,15 @@ BONUS       := bonus/ft_lstnew_bonus.c \
 
 OBJS		:= $(SRCS:.c=.o)
 OBJS_BONUS  := $(BONUS:.c=.o)
-BUILD_OBJS	:= $(OBJS)
 
-ifeq ($(MAKECMDGOALS), bonus)
-	BUILD_OBJS += $(OBJS_BONUS)
+ifeq ($(filter bonus, $(MAKECMDGOALS)), bonus)
+	OBJS += $(OBJS_BONUS)
 endif
 
 all: $(NAME)
 
-$(NAME): $(BUILD_OBJS)
-	$(AR) $@ $^
+$(NAME): $(OBJS)
+	$(AR) $(NAME) $(OBJS)
 
 bonus: $(NAME)
 
