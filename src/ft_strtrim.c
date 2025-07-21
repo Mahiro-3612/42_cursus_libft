@@ -6,13 +6,13 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 04:41:11 by codespace         #+#    #+#             */
-/*   Updated: 2025/07/19 08:24:34 by codespace        ###   ########.fr       */
+/*   Updated: 2025/07/21 10:02:42 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-size_t	is_in_set(char const s, char const *set)
+static size_t	is_in_set(char const s, char const *set)
 {
 	size_t	flg;
 

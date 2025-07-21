@@ -6,13 +6,13 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 16:13:12 by msakurai          #+#    #+#             */
-/*   Updated: 2025/07/21 09:43:13 by codespace        ###   ########.fr       */
+/*   Updated: 2025/07/21 10:02:24 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-size_t	ft_strnlen(const char *s, size_t maxlen)
+static size_t	ft_strnlen(const char *s, size_t maxlen)
 {
 	size_t	len;
 

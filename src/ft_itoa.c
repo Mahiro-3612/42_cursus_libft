@@ -6,13 +6,13 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 04:38:48 by codespace         #+#    #+#             */
-/*   Updated: 2025/07/19 08:26:45 by codespace        ###   ########.fr       */
+/*   Updated: 2025/07/21 10:01:24 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-size_t	get_digits(int n)
+static size_t	get_digits(int n)
 {
 	size_t	digits;
 
