@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 16:13:07 by msakurai          #+#    #+#             */
-/*   Updated: 2025/07/18 11:11:59 by codespace        ###   ########.fr       */
+/*   Updated: 2025/07/21 09:05:27 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,11 @@ char	*ft_strchr(const char *s, int c)
 
 	c_char = (const char)c;
 	if (c_char == '\0')
-	{
 		return ((char *)(s + ft_strlen(s)));
-	}
 	while (*s)
 	{
 		if (*s == c_char)
-		{
 			return ((char *)(s));
-		}
 		s++;
 	}
 	return (NULL);
