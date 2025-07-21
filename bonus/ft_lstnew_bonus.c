@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msakurai <msakurai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/06 16:12:37 by msakurai          #+#    #+#             */
-/*   Updated: 2025/07/06 16:35:44 by msakurai         ###   ########.fr       */
+/*   Created: 2025/07/20 05:21:32 by codespace         #+#    #+#             */
+/*   Updated: 2025/07/20 08:31:54 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+t_list	*ft_lstnew(void *content)
 {
-	unsigned char	*ptr;
+	t_list	*new;
 
-	if (nmemb == 0 || size == 0)
+	new = malloc(sizeof(t_list));
+	if (!new)
 		return (NULL);
-	ptr = malloc(nmemb * size);
-	if (ptr == NULL)
-		return (NULL);
-	ft_memset(ptr, 0, nmemb * size);
-	return (ptr);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

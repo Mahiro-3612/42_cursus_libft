@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msakurai <msakurai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/06 16:12:37 by msakurai          #+#    #+#             */
-/*   Updated: 2025/07/06 16:35:44 by msakurai         ###   ########.fr       */
+/*   Created: 2025/07/20 05:35:10 by codespace         #+#    #+#             */
+/*   Updated: 2025/07/20 10:08:24 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
-{
-	unsigned char	*ptr;
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
 
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-	ptr = malloc(nmemb * size);
-	if (ptr == NULL)
-		return (NULL);
-	ft_memset(ptr, 0, nmemb * size);
-	return (ptr);
+void	ft_lstclear(t_list **lst, void (*del)(void *))
+{
+	t_list	*tmp;
+
+	if (!lst || !*lst || !del)
+		return ;
+	while (*lst)
+	{
+		tmp = (*lst)->content;
+		ft_lstdelone(*lst, del);
+		*lst = tmp;
+	}
 }

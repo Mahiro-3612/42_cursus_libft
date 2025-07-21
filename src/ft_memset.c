@@ -1,7 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msakurai <msakurai@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/06 16:13:04 by msakurai          #+#    #+#             */
+/*   Updated: 2025/07/06 16:36:09 by msakurai         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../libft.h"
 
-//  The  memset()  function  fills  the  first  n bytes of the memory area pointed to by s with the constant byte c.
-// s[.n] is a GNU extension that allows you to specify the size of the array s. s has at leat n bytes.
+//  The  memset()  function  fills  the  first  n bytes of the memory
+//  area pointed to by s with the constant byte c.
+// s[.n] is a GNU extension that allows you to specify the size of the array s.
+// s has at leat n bytes.
 
 void	*ft_memset(void *s, int c, size_t n)
 {
