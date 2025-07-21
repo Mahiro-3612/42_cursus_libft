@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 16:12:59 by msakurai          #+#    #+#             */
-/*   Updated: 2025/07/21 14:22:45 by codespace        ###   ########.fr       */
+/*   Updated: 2025/07/21 14:34:47 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char		*dest_ptr;
 	const unsigned char	*src_ptr;
 
+	if (!dest && !src)
+		return (dest);
 	dest_ptr = (unsigned char *)dest;
 	src_ptr = (const unsigned char *)src;
 	i = 0;
