@@ -6,7 +6,7 @@
 /*   By: msakurai <msakurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 04:40:19 by codespace         #+#    #+#             */
-/*   Updated: 2025/07/26 12:08:58 by msakurai         ###   ########.fr       */
+/*   Updated: 2025/07/26 12:35:49 by msakurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ char	**ft_split(char const *s, char c)
 	size_t	row_count;
 	char	**dest;
 
+	if (!s)
+		return (NULL);
 	row_count = count_row(s, c);
 	dest = ft_calloc(row_count + 1, sizeof(char *));
 	if (!dest)
