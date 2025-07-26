@@ -6,7 +6,7 @@
 #    By: msakurai <msakurai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/26 12:07:29 by msakurai          #+#    #+#              #
-#    Updated: 2025/07/26 12:08:37 by msakurai         ###   ########.fr        #
+#    Updated: 2025/07/26 12:22:00 by msakurai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,14 +19,6 @@ RM			:= rm -f
 CFLAGS		:= -Wall -Wextra -Werror
 
 INCDIR= -I./
-
-TEST_PROG        := test_program
-TEST_PROG_BONUS  := test_bonus_program
-
-TEST_SRCS        := test.c
-TEST_SRCS_BONUS  := test_bonus.c
-
-MAKE_OPTS   := --no-print-directory -s
 
 SRCS		:= ft_strlen.c \
                 ft_strlcpy.c \
@@ -98,22 +90,4 @@ fclean: clean
 
 re: fclean all
 
-test:
-	@$(MAKE) $(MAKE_OPTS) all
-	@echo "--- Compiling $(TEST_SRCS) and running tests ---"
-	@$(CC) $(CFLAGS) $(INCDIR) $(TEST_SRCS) -L. -lft -o $(TEST_PROG)
-	@./$(TEST_PROG)
-	@echo "\n--- Cleaning up test files ---"
-	@$(RM) $(TEST_PROG)
-	@$(MAKE) $(MAKE_OPTS) fclean
-
-test_bonus:
-	@$(MAKE) $(MAKE_OPTS) bonus
-	@echo "--- Compiling $(TEST_SRCS_BONUS) and running bonus tests ---"
-	@$(CC) $(CFLAGS) $(INCDIR) $(TEST_SRCS_BONUS) -L. -lft -o $(TEST_PROG_BONUS)
-	@./$(TEST_PROG_BONUS)
-	@echo "\n--- Cleaning up test files ---"
-	@$(RM) $(TEST_PROG_BONUS)
-	@$(MAKE) $(MAKE_OPTS) fclean
-
-.PHONY: all clean fclean re bonus test test_bonus
+.PHONY: all clean fclean re bonus
